@@ -1,0 +1,45 @@
+
+@mixin flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.header {
+  $header: &;
+  position: relative;
+  padding: 12px 0;
+  box-shadow: 0 2px 15px 0 rgba(40, 57, 137, 0.7);
+  background-color: #283989;
+  margin-bottom: 50px;
+
+  > .container {
+    @include flex-center-between;
+
+    #{ $header }__logo {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.29;
+      color: #fff;
+    }
+
+    #{ $header }__menu {
+      @include flex-center-between;
+
+      a, button {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+        color: #ffffff;
+        text-decoration: none;
+        background: none;
+        border: none;
+
+        & + a, & + button {
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+}

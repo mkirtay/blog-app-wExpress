@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 
 
-import './input.scss';
 
 const Input = ({type, label, name, ...props}) => {
     const [inputDirty, setInputDirty] = useState(false)

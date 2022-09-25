@@ -3,12 +3,14 @@ import BlogList from './AllBlogs/sagas'
 import BlogDetail from './BlogDetail/sagas'
 import AddNewBlog from './AddNewBlog/sagas'
 import DeleteBlog from './DeleteBlog/sagas'
+import Logout from './Logout/sagas'
 
 export default function* rootSaga() {
     yield all([
         BlogList(),
         BlogDetail(),
         AddNewBlog(),
-        DeleteBlog()
+        DeleteBlog(),
+        Logout()
     ])
 }

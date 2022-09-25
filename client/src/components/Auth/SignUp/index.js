@@ -1,31 +1,38 @@
 import React from 'react';
-import {Button} from "../../index";
+import {Button, Header, InputAntd} from "../../index";
+
+import '../auth.scss';
 
 const Login = () => {
     return (
-        <div className="all-blogs">
-            <div className="container">
-                <h1>Sign Up Page</h1>
-                <form className="form" method='post' action={"/sign-up"}>
-                    <div className="form__row">
-                        <span>Username:</span>
-                        <input type="text" name="username"/>
-                    </div>
-                    <div className="form__row">
-                        <span>Password:</span>
-                        <input type="text" name="password"/>
-                    </div>
-                    <Button
-                        type="submit"
-                        size="small"
-                        className="button--warning">
-                        Register
-                    </Button>
+        <>
+            <Header signup={true} />
+            <div className="all-blogs">
+                <div className="container">
+                    <div className="auth-box">
+                        <form className="form" method='post' action={"/sign-up"}>
+                            <h1 className="form__title">Sign Up</h1>
+                            <div className="form__row">
+                                <InputAntd name="username" label="Username" />
+                            </div>
+                            <div className="form__row">
+                                <InputAntd name="password" label="Password" />
+                            </div>
+                            <div className="form__action">
+                                <Button
+                                    type="submit"
+                                    size="small"
+                                    className="button--warning">
+                                    Register
+                                </Button>
+                            </div>
 
-                    {/*<button type="submit" onClick={(e) => onSaveEditBlog(e)}>Save</button>*/}
-                </form>
+                            {/*<button type="submit" onClick={(e) => onSaveEditBlog(e)}>Save</button>*/}
+                        </form>
+                    </div>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

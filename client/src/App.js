@@ -4,8 +4,10 @@ import { Provider } from "react-redux";
 import createSagaMiddleware from "redux-saga";
 import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 
+import "antd/dist/antd.min.css";
 import "./assets/css/_styles.scss";
-import "./assets/css/_styles.scss";
+import "./components/components.scss";
+
 
 
 import Sagas from "./redux/sagas";
@@ -37,7 +39,7 @@ function App() {
                 <Route path="/all-blogs" exact element={<BlogList />} />
                 <Route path="/all-blogs/:id" element={<BlogsDetail />} />
                 <Route path="/add-new-blog" exact element={<AddNewBlog />} />
-                <Route path="/" exact element={<Login />} />
+                <Route path="/login" exact element={<Login />} />
                 <Route path="/sign-up" exact element={<SignUp />} />
                 <Route path="/sign-up" exact element={<SignUp />} />
                 <Route path="/sign-up" exact element={<SignUp />} />

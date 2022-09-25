@@ -58,7 +58,7 @@ const add_blog = (req, res) => {
 
     newBlog.save()
         .then((result) => {
-            res.redirect('/')
+            res.redirect('/all-blogs')
         })
         .catch((err) => {
             console.log(err)

@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 
+import {Button, Header, InputAntd} from "../index";
 
 const AddNewBlog = () => {
     const refTitle = useRef(null);
@@ -22,33 +23,36 @@ const AddNewBlog = () => {
     }*/
 
     return (
-        <div className="add-new-blog">
-            {/*onSubmit={onFormFinish}*/}
-            <form action="/add-new-blog" method="post" className="form">
-                <div className="form__row">
-                    <label>
-                        Blog Başlık <br/>
-                        <input ref={refTitle} name="title" type="text"/>
-                    </label>
+        <>
+            <Header />
+            <div className="add-new-blog">
+                {/*onSubmit={onFormFinish}*/}
+                <div className="container">
+                    <div className="auth-box">
+                        <form action="/add-new-blog" method="post" className="form">
+                            <div className="form__row">
+                                <InputAntd name="title" label="Blog Başlık" />
+                            </div>
+                            <div className="form__row">
+                                <InputAntd name="short" label="Blog Kısa Yazı" />
+                            </div>
+                            <div className="form__row">
+                                <InputAntd name="long" label="Blog Uzun Yazı" />
+                            </div>
+                            <br/>
+                            <div className="form__action">
+                                <Button
+                                    type="submit"
+                                    size="small"
+                                    className="button--warning">
+                                    Add New Blog
+                                </Button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div className="form__row">
-                    <label>
-                        Blog Kısa Yazı <br/>
-                        <input ref={refShort} name="short" type="text"/>
-                    </label>
-                </div>
-                <div className="form__row">
-                    <label>
-                        Blog Uzun Yazı <br/>
-                        <input ref={refLong} name="long" type="text"/>
-                    </label>
-                </div>
-                <br/>
-                <div className="form__action">
-                    <button>Save</button>
-                </div>
-            </form>
-        </div>
+            </div>
+        </>
     )
 }
 

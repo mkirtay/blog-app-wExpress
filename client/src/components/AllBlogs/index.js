@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from "react-redux";
-import {Box} from "../index";
+import {Box, Header} from "../index";
 import actions from "../../redux/actions";
 import './all-blogs.scss';
 
@@ -27,16 +27,19 @@ const Main = () => {
 
 
     return (
-        <div className="all-blogs">
-            <div className="container">
-                <h1>Blog List Page</h1>
-                {blogsListState && blogsListState.map((item, key) => {
-                    return (
-                        <Box key={'blogs-box-' + key} href={item._id} title={item.title} desc={item.short}/>
-                    )
-                })}
+        <>
+            <Header />
+            <div className="all-blogs">
+                <div className="container">
+                    <h1>Blog List Page</h1>
+                    {blogsListState && blogsListState.map((item, key) => {
+                        return (
+                            <Box key={'blogs-box-' + key} href={item._id} title={item.title} desc={item.short}/>
+                        )
+                    })}
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
